@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Livewire\Crud;
+use App\Http\Livewire\Professor;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('students', Crud::class)->name('students');
+Route::get('professores', Professor::class)->name('professores');
+
 
 Route::middleware([
     'auth:sanctum',
